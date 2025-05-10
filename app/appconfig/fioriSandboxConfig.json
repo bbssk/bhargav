@@ -1,0 +1,148 @@
+{
+    "services": {
+      "LaunchPage": {
+        "adapter": {
+          "config": {
+            "catalogs": [],
+            "groups": [
+              {
+                "id": "CompanyAdministration",
+                "title": "Partner Administration",
+                "isPreset": true,
+                "isVisible": true,
+                "isGroupLocked": false,
+                "tiles": [
+                  {
+                    "id": "ContractorAdministration",
+                    "tileType": "sap.ushell.ui.tile.StaticTile",
+                    "properties": {
+                      "title": "Partner Administration",
+                      "targetURL": "interaction_items/webapp"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "Work",
+                "title": "Work Management",
+                "isPreset": true,
+                "isVisible": true,
+                "isGroupLocked": false,
+                "tiles": [
+                  {
+                    "id": "dispatcher",
+                    "tileType": "sap.ushell.ui.tile.StaticTile",
+                    "properties": {
+                      "title": "Dispatch",
+                      "targetURL": "interaction_items/webapp"
+                    }
+                  },
+                  {
+                    "id": "workexecution",
+                    "tileType": "sap.ushell.ui.tile.StaticTile",
+                    "properties": {
+                      "title": "Perform",
+                      "targetURL": "interaction_items/webapp"
+                    }
+                  },
+                  {
+                    "id": "approver",
+                    "tileType": "sap.ushell.ui.tile.StaticTile",
+                    "properties": {
+                      "title": "Approve",
+                      "targetURL": "interaction_items/webapp"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "SyncAdministration",
+                "title": "Data Management",
+                "isPreset": true,
+                "isVisible": true,
+                "isGroupLocked": false,
+                "tiles": [
+                  {
+                    "id": "SyncCockpit",
+                    "tileType": "sap.ushell.ui.tile.StaticTile",
+                    "properties": {
+                      "title": "Synchronization Cockpit",
+                      "targetURL": "interaction_items/webapp"
+                    }
+                  },
+                  {
+                    "id": "DataMonitor",
+                    "tileType": "sap.ushell.ui.tile.StaticTile",
+                    "properties": {
+                      "title": "Data Monitor",
+                      "targetURL": "interaction_items/webapp"
+                    }
+                  },
+                  {
+                    "id": "maintenanceorders",
+                    "tileType": "sap.ushell.ui.tile.StaticTile",
+                    "properties": {
+                      "title": "Data Monitor BNAC",
+                      "targetURL": "interaction_items/webapp"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "NavTargetResolution": {
+        "config": {
+          "enableClientSideTargetResolution": true
+        }
+      },
+      "ClientSideTargetResolution": {
+        "adapter": {
+          "config": {
+            "inbounds": {
+              "ContractorAdministration": {
+                "semanticObject": "Company",
+                "action": "manage",
+                "signature": {
+                  "parameters": {},
+                  "additionalParameters": "allowed"
+                },
+                "resolutionResult": {
+                  "applicationType": "SAPUI5",
+                  "additionalInformation": "SAPUI5.Component=contractor",
+                  "url": "/interaction_items/webapp"
+                }
+              },
+              "SyncCockpit": {
+                "semanticObject": "Sync",
+                "action": "manage",
+                "signature": {
+                  "parameters": {},
+                  "additionalParameters": "allowed"
+                },
+                "resolutionResult": {
+                  "applicationType": "SAPUI5",
+                  "additionalInformation": "SAPUI5.Component=company",
+                  "url": "/interaction_items/webapp"
+                }
+              },
+              "PersitentWorkOrders": {
+                "semanticObject": "Order",
+                "action": "manage",
+                "signature": {
+                  "parameters": {},
+                  "additionalParameters": "allowed"
+                },
+                "resolutionResult": {
+                  "applicationType": "SAPUI5",
+                  "additionalInformation": "SAPUI5.Component=company",
+                  "url": "/interaction_items/webapp"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

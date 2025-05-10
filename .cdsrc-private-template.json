@@ -1,0 +1,34 @@
+{
+    "requires": {
+        "[hybrid]": {
+            "db": {
+                "binding": {
+                    "type": "cf",
+                    "apiEndpoint": "https://api.cf.us10.hana.ondemand.com",
+                    "org": "Developer Advocates_cap-codejam-2xnpct8z",
+                    "space": "dev",
+                    "instance": "bhargav-hana",
+                    "key": "bhargav-hana-key"
+                },
+                "kind": "hana-cloud",
+                "vcap": {
+                    "name": "db"
+                }
+            },
+            "auth": {
+                "binding": {
+                    "type": "cf",
+                    "apiEndpoint": "https://api.cf.us10.hana.ondemand.com",
+                    "org": "Developer Advocates_cap-codejam-2xnpct8z",
+                    "space": "dev",
+                    "instance": "bhargav-auth",
+                    "key": "bhargav-auth-key"
+                },
+                "kind": "xsuaa-auth",
+                "vcap": {
+                    "name": "auth"
+                }
+            }
+        }
+    }
+}

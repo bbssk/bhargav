@@ -1,5 +1,5 @@
 {
-  "welcomeFile": "interaction_items/webapp/index.html",
+  "welcomeFile": "app/fiori-apps.html",
   "authenticationMethod": "route",
   "logout": {
     "logoutEndpoint": "/app-logout",
@@ -7,21 +7,21 @@
   },
   "routes": [
     {
-      "source": "^/interaction_items/webapp/(.*)$",
+      "source": "^/app/(.*)$",
       "target": "$1",
-      "localDir": "interaction_items/webapp/",
-      "authenticationType": "xsuaa"
+      "localDir": ".",
+      "cacheControl": "no-cache, no-store, must-revalidate"
+    },
+    {
+      "source": "^/appconfig/",
+      "localDir": ".",
+      "cacheControl": "no-cache, no-store, must-revalidate"
     },
     {
       "source": "^/(.*)$",
       "destination": "srv-api",
       "csrfProtection": true,
       "authenticationType": "xsuaa"
-    },
-    {
-      "source": "^/appconfig/",
-      "localDir": ".",
-      "cacheControl": "no-cache, no-store, must-revalidate"
     },
     {
       "source": "^/user-api(.*)",
